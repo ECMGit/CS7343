@@ -22,7 +22,17 @@
 > make clean
 ```
 
-running result:
+running result and anaysis:
+
+we use default paramter in Makefile
+
+generate 20 random numbers, and create 4 threads for sorting, each thread sort 5 numbers,
+
+In each sorting thread we simply called a qsort function which used to sort sub array in divided range.
+
+after sorting different chunk of integers,
+
+ we create another thread which merge the sorted subarray and check whole array has been sorted
 
 ```
 gcc project_phase3.c -o pthread_sort.out
@@ -31,6 +41,8 @@ cat /dev/null > sample1.txt
 ./pthread_sort.out 20 sample1.txt 4
 
 
+
+------------------------------output below this line---------------------------------------
 339 797 781 536 204 531 727 315 262 520 408 615 610 206 868 922 378 860 299 664 
 The thread 16822272 is sorting from 10 to 15 
 The sorted array: 
@@ -51,5 +63,5 @@ This thread 17358848 is executed
 output result array204 206 262 299 315 339 378 408 520 531 536 610 615 664 727 781 797 860 868 922 
 ```
 
-we use separated pthread to sorting subarray in list and merge it through merger function running by another thread.
+
 
