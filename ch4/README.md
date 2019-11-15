@@ -32,7 +32,7 @@ In each sorting thread we simply called a qsort function which used to sort sub 
 
 after sorting different chunk of integers,
 
- we create another thread which merge the sorted subarray and check whole array has been sorted
+ we create another thread which **merge** the sorted subarray and check whole array has been sorted
 
 ```
 gcc project_phase3.c -o pthread_sort.out
@@ -65,3 +65,8 @@ output result array204 206 262 299 315 339 378 408 520 531 536 610 615 664 727 7
 
 
 
+in the program we have 2 functions except main
+
+we read the input of number of thread and create the assigned number of thread within **sort_routine** function and we divide the input array by setting begin pointer and end pointer to each sorting thread.
+
+after creating and executing sorting thread, we create another thread and assign it within **merger** function to merge sorting result into result.
