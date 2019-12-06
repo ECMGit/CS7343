@@ -17,7 +17,7 @@ void init()
 {
 int i;
 
-	if ( pthread_mutex_init(&mutex_lock, NULL) != 0)
+	if (pthread_mutex_init(&mutex_lock, NULL) != 0)
 		printf("%s\n",strerror(errno));
 
 	/** OS X code */
@@ -61,6 +61,10 @@ int i;
 void create_ta()
 {
 	pthread_create(&ta, 0, ta_loop, 0);
+}
+
+void create_chair(){
+    
 }
 
 int main(void)
